@@ -59,11 +59,12 @@ if selected_layers:
         layers=selected_layers,
     ))
     st.write(df_lima.groupby('provincia')['distrito'].value_counts())
-    
+
     st.header("Histograma x  Distrito y Sexo - fallecidos")
-    fig = px.histogram  (df_lima, x="distrito", y='sexo', histfunc="count", color="sexo", template="plotly_dark" )
+    fig = px.histogram(df_lima, x="distrito", y='sexo', histfunc="count", color="sexo", template="plotly_dark")
     st.write(fig)
-else
+
+else:
     st.error("Please choose at least one layer above.")
 
 
